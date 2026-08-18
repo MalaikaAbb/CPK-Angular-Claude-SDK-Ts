@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "docsRoot": "https://docs.copilotkit.ai/angular/claude-sdk-typescript",
+  "syncedAt": "2026-08-18T06:39:30.598Z",
+  "pages": {
+    "/angular/claude-sdk-typescript": {
+      "file": "angular__claude-sdk-typescript.md",
+      "sha256": "daf55387e6b641f6a0288938265aae3a3dd98d70e0935538fbe288677c9bef13",
+      "bytes": 9244,
+      "lines": 272,
+      "routes": [
+        "/",
+        "/doc-sync"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/a2ui": {
+      "file": "angular__claude-sdk-typescript__guides__a2ui.md",
+      "sha256": "e991a819ff66567ff58d806295d8b53467b09ea26cbab399d8d89caca8a2aa5a",
+      "bytes": 5893,
+      "lines": 195,
+      "routes": [
+        "/a2ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/chat-ui": {
+      "file": "angular__claude-sdk-typescript__guides__chat-ui.md",
+      "sha256": "92d971783b58dba9a785d2ce61921fc11c09b8fdd84d07e65b038ba21c3d9078",
+      "bytes": 5159,
+      "lines": 178,
+      "routes": [
+        "/chat-ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/frontend-tools-generative-ui": {
+      "file": "angular__claude-sdk-typescript__guides__frontend-tools-generative-ui.md",
+      "sha256": "b21a1007ffd908109850af7864207344ef0df76f0baa942b4a259ae64045d9d0",
+      "bytes": 5743,
+      "lines": 178,
+      "routes": [
+        "/frontend-tools-generative-ui"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/human-in-the-loop": {
+      "file": "angular__claude-sdk-typescript__guides__human-in-the-loop.md",
+      "sha256": "67f5b983765aca79d1d6cefd26f0a284abb6f249e9ed5103b85bdc67d6b3432f",
+      "bytes": 7187,
+      "lines": 227,
+      "routes": [
+        "/human-in-the-loop"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/shared-state": {
+      "file": "angular__claude-sdk-typescript__guides__shared-state.md",
+      "sha256": "4b4a2804c81c1a5c3dfcea31f1531d04c250c0b17f0f81fe372e3a0c5b3b0202",
+      "bytes": 4737,
+      "lines": 151,
+      "routes": [
+        "/shared-state"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/threads-memory-attachments-headless": {
+      "file": "angular__claude-sdk-typescript__guides__threads-memory-attachments-headless.md",
+      "sha256": "02923dd816c4f448c776581c2a8cbd325208180c76506d7667e3a3b9f64dc97d",
+      "bytes": 8962,
+      "lines": 302,
+      "routes": [
+        "/threads",
+        "/memory",
+        "/attachments",
+        "/headless"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/guides/voice-multimodal": {
+      "file": "angular__claude-sdk-typescript__guides__voice-multimodal.md",
+      "sha256": "7a1b3a61e7b674e77bfcf38d3e7545e30c3076ade9df82e0676d9e64c47b8758",
+      "bytes": 3827,
+      "lines": 111,
+      "routes": [
+        "/voice-multimodal"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    },
+    "/angular/claude-sdk-typescript/quickstart": {
+      "file": "angular__claude-sdk-typescript__quickstart.md",
+      "sha256": "daf55387e6b641f6a0288938265aae3a3dd98d70e0935538fbe288677c9bef13",
+      "bytes": 9244,
+      "lines": 272,
+      "routes": [
+        "/quickstart"
+      ],
+      "status": "ok",
+      "age": 0,
+      "date": "Tue, 18 Aug 2026 06:39:31 GMT"
+    }
+  },
+  "sitemap": {
+    "fetchedAt": "2026-08-18T06:39:30.598Z",
+    "urlsUnderRoot": 1,
+    "knownUnmapped": []
+  }
+}
