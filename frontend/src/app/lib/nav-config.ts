@@ -75,7 +75,7 @@ export const NAV: NavGroup[] = [
         path: '/quickstart',
         hasDemo: true,
         title: 'Quickstart',
-        docPath: '/angular/claude-sdk-typescript/quickstart',
+        docPath: '/angular/claude-sdk-typescript/intelligence/quickstart',
         summary:
           'The smallest end-to-end path: an HttpAgent bound to the Claude Agent SDK TypeScript backend in Copilot Runtime, provideCopilotKit, and one copilot-chat.',
         status: 'working',

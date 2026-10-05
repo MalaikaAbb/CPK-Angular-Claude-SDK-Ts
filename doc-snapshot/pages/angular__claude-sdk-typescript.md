@@ -2,6 +2,7 @@
 
 > Connect an Angular app to Copilot Runtime with CopilotKit.
 
+
 `@copilotkit/angular` provides Angular components, directives, and services for CopilotKit. This guide gets you to a working Angular app with a chat UI backed by [Copilot Runtime](/angular/claude-sdk-typescript/backend/copilot-runtime). When you select an agent backend in the sidebar, the backend step below changes with it; without a selection, the guide uses CopilotKit's `BuiltInAgent`.
 
 The runtime runs on your server, keeps model credentials out of the browser, and exposes the `default` agent that `CopilotChat` uses automatically.
@@ -9,7 +10,7 @@ The runtime runs on your server, keeps model credentials out of the browser, and
 <OpsPlatformCTA
   variant="inline"
   title="Take your Angular copilot from local to production"
-  body="Add durable threads, inspection, and managed or self-hosted Enterprise Intelligence without changing the Angular frontend APIs in this guide."
+  body="Add durable threads, inspection, and managed or self-hosted CopilotKit Intelligence without changing the Angular frontend APIs in this guide."
   surface="docs:angular/quickstart:production"
 />
 
@@ -22,7 +23,7 @@ headless APIs, and it supports zoneless applications.
 ## Prerequisites
 
 - An OpenAI API key (or another model provider supported by [Model Selection](/angular/model-selection))
-- Angular 20, 21, or 22
+- Angular 22
 - Node.js 22
 
 ## Getting started
@@ -31,7 +32,7 @@ headless APIs, and it supports zoneless applications.
     <Step>
         ### Create your Angular app
 
-        If you don't have one already, pin the CLI to one of the supported majors. This example uses Angular 22:
+        If you don't have one already, pin the CLI to the supported major:
 
         ```bash
         npx @angular/cli@22 new my-copilot-app
@@ -95,6 +96,47 @@ headless APIs, and it supports zoneless applications.
 
     
 ~~~~typescript title="claude-agent-sdk-adapter.ts"
+function createClaudeAgentAdapter({
+  toolSchemas,
+  emit,
+  getState,
+  setState,
+  executeTool,
+  model,
+  systemPrompt,
+}: {
+  toolSchemas: Anthropic.Tool[];
+  emit: Emit;
+  getState: () => Record<string, unknown>;
+  setState: (state: Record<string, unknown>) => void;
+  executeTool: ExecuteTool;
+  model: string;
+  systemPrompt: string;
+}) {
+  const backendToolServer = buildBackendToolServer({
+    toolSchemas,
+    emit,
+    getState,
+    setState,
+    executeTool,
+  });
+
+  return new ClaudeAgentAdapter({
+    agentId: "claude-sdk-typescript",
+    model: normalizeClaudeAgentSdkModel(model),
+    systemPrompt,
+    tools: [],
+    mcpServers: backendToolServer.mcpServers,
+    allowedTools: backendToolServer.allowedTools,
+    permissionMode: "dontAsk",
+    maxTurns: 10,
+  });
+}
+~~~~
+
+
+    
+~~~~typescript title="claude-agent-sdk-adapter.ts"
 export async function runWithClaudeAgentSdk({
   input,
   emit,
@@ -120,7 +162,7 @@ export async function runWithClaudeAgentSdk({
 }): Promise<void> {
   let state = { ...initialState };
   const pendingStateSnapshots: Record<string, unknown>[] = [];
-  const backendToolServer = buildBackendToolServer({
+  const adapter = createClaudeAgentAdapter({
     toolSchemas,
     emit,
     getState: () => state,
@@ -129,17 +171,8 @@ export async function runWithClaudeAgentSdk({
       pendingStateSnapshots.push(state);
     },
     executeTool,
-  });
-
-  const adapter = new ClaudeAgentAdapter({
-    agentId: "claude-sdk-typescript",
-    model: normalizeClaudeAgentSdkModel(model),
     systemPrompt,
-    tools: [],
-    mcpServers: backendToolServer.mcpServers,
-    allowedTools: backendToolServer.allowedTools,
-    permissionMode: "dontAsk",
-    maxTurns: 10,
+    model,
   });
 
   if (forwardedHeaders && Object.keys(forwardedHeaders).length > 0) {
@@ -258,13 +291,25 @@ export async function runWithClaudeAgentSdk({
         Angular → Copilot Runtime → your selected agent backend.
       </Step>
     
+    <Step>
+        ### Open Inspector and confirm setup
+
+Angular does not mount Inspector by default. First follow [Inspector for Angular](/angular/claude-sdk-typescript/inspector). Then, on localhost, click the Inspector button.
+
+1. Open **Agents**, then **Agent**. Your agent is listed.
+2. Send a chat message. Open **Agents**, then **AG-UI Events**. Events are moving.
+3. Open **Threads**. The list is unlocked (Intelligence is on), or locked with Enable Intelligence (Intelligence is off).
+
+More detail: [Inspector](/angular/claude-sdk-typescript/inspector).
+
+    </Step>
 
 </Steps>
 
 ## Next steps
 
 - [Runtime and backend docs](backend/copilot-runtime): configure the server, secure requests, and deploy without leaving the selected Angular surface.
-- [Enterprise Intelligence](premium/overview): add durable threads, inspection, and cloud-hosted or self-hosted operations.
+- [CopilotKit Intelligence](premium/overview): add durable threads, inspection, and cloud-hosted or self-hosted operations.
 - [Angular task guides](guides/chat-ui): build chat UI, tools, generative UI, interrupts, shared state, threads, memory, attachments, and headless UI.
 - [Angular feature examples](features): find runnable examples and canonical shared Angular source for each supported feature.
 - [Angular API reference](/reference/angular): use components, signals, tools, context, and runtime services.

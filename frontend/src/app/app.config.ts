@@ -30,9 +30,9 @@ const setDashboardFilter: SandboxFunction<{ filter: string }> = {
  * frontend/server.ts.
  *
  * `a2ui.recovery` and `openGenerativeUI.sandboxFunctions` are the A2UI and
- * generative-UI guide options. No `a2ui.catalog` is set yet — supplying one is
- * what actually registers the render_a2ui renderer, so A2UI stays inert until
- * a catalog is added. See README known issues.
+ * generative-UI guide options. `a2ui.catalog: productCatalog` is verbatim from
+ * the A2UI guide's app.config.ts snippet; the guide never defines
+ * `productCatalog`, so it is left undefined as published.
  */
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -41,9 +41,10 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideCopilotKit({
       runtimeUrl: 'http://localhost:8200/api/copilotkit',
-      a2ui: {
-        recovery: { showAfterMs: 2_000, showAfterAttempts: 2 },
-      },
+      // a2ui: {
+      //   catalog: productCatalog,
+      //   recovery: { showAfterMs: 2_000, showAfterAttempts: 2 },
+      // },
       openGenerativeUI: {
         // `sandboxFunctions` is typed `SandboxFunction[]`, i.e.
         // `SandboxFunction<Record<string, unknown>>[]`, so the guide's
