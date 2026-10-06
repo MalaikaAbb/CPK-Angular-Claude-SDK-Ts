@@ -294,7 +294,7 @@ export async function runWithClaudeAgentSdk({
     <Step>
         ### Open Inspector and confirm setup
 
-Angular does not mount Inspector by default. First follow [Inspector for Angular](/angular/claude-sdk-typescript/inspector). Then, on localhost, click the Inspector button.
+On localhost, click the Inspector button in the corner of the app.
 
 1. Open **Agents**, then **Agent**. Your agent is listed.
 2. Send a chat message. Open **Agents**, then **AG-UI Events**. Events are moving.
@@ -309,7 +309,7 @@ More detail: [Inspector](/angular/claude-sdk-typescript/inspector).
 ## Next steps
 
 - [Runtime and backend docs](backend/copilot-runtime): configure the server, secure requests, and deploy without leaving the selected Angular surface.
-- [CopilotKit Intelligence](premium/overview): add durable threads, inspection, and cloud-hosted or self-hosted operations.
+- [CopilotKit Intelligence](intelligence/overview): add durable threads, inspection, and cloud-hosted or self-hosted operations.
 - [Angular task guides](guides/chat-ui): build chat UI, tools, generative UI, interrupts, shared state, threads, memory, attachments, and headless UI.
 - [Angular feature examples](features): find runnable examples and canonical shared Angular source for each supported feature.
 - [Angular API reference](/reference/angular): use components, signals, tools, context, and runtime services.

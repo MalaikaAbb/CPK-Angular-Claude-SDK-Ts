@@ -8,9 +8,9 @@ Holds the 3 most recent dated entries. When a change lands on a fourth
 date, the oldest entry is dropped. Entries are counted, not aged, so a gap of
 weeks between changes does not expire anything.
 
-## 2026-08-26
+## 2026-09-04
 
-### 10:53 UTC — 4 pages, highest severity high
+### 15:24 UTC — 5 pages, highest severity high
 
 **High — Introduction**
 
@@ -27,6 +27,23 @@ weeks between changes does not expire anything.
 + If you don't have one already, pin the CLI to the supported major:
 + function createClaudeAgentAdapter({
 + toolSchemas,
+````
+
+**High — Frontend tools and generative UI**
+
+`/angular/claude-sdk-typescript/guides/frontend-tools-generative-ui` · route `/frontend-tools-generative-ui` · under “Let the agent display one of your components”
+
+36 code lines, 1 heading, 21 prose lines changed. The number of fenced code blocks changed.
+
+````diff
++ ## Let the agent display one of your components
++ 
++ The simplest generative UI there is, and the only kind that needs nothing on the
++ agent side. `registerComponent` registers a standalone component as a tool the
++ agent can call to show it. The agent decides when, and fills the props.
++ 
++ ```ts title="src/app/incident-card.component.ts"
++ import { Component, input } from "@angular/core";
 ````
 
 **High — Human-in-the-loop and interrupts**
