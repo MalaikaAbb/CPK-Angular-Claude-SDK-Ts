@@ -4,3 +4,12 @@ node_modules/
 # The snapshot itself (doc-snapshot/pages/, manifest.json, CHANGELOG.md)
 # IS committed; it is the baseline every diff is taken against.
 doc-snapshot/reports/
+
+# LangGraph API
+.langgraph_api
+
+# Local secrets (API keys). See backend/.env.example and frontend/.env.example.
+.env
+
+# CopilotKit CLI local project state (written by `copilotkit project select`)
+.copilotkit/
